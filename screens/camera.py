@@ -15,17 +15,15 @@ from kivy.lang import Builder
 from kivymd.app import MDApp as App
 from kivymd.uix.button import MDFlatButton as Button
 from utils import make_new_texture_frame
-from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.screenmanager import Screen
+from kivymd.uix.boxlayout import MDBoxLayout
+from kivymd.uix.card import MDCard, MDSeparator
+from kivymd.uix.label import MDLabel
+from kivymd.uix.screen import MDScreen
+from kivy.lang import Builder
 
 Logger.info(f"Versions: Numpy {np.__version__}")
 Logger.info(f"Versions: Opencv {cv2.__version__}")
-
-
-class Camera(Screen, App):
-    def build(self):
-        return
-    pass
+Builder.load_file('screens/camera.kv')
 
 class CameraCV(XCamera):
     def on_tex(self, *l):
@@ -33,7 +31,7 @@ class CameraCV(XCamera):
         self.image_size = self._camera.texture.size
 
 
-class CamApp(App):
+class CamApp(MDScreen):
 
    
     def build(self):
@@ -103,7 +101,3 @@ class CamApp(App):
 
     def display_frame(self):
         self.img1.texture = make_new_texture_frame(self)
-
-
-if __name__ == "__main__":
-    CamApp().run()
