@@ -14,7 +14,7 @@ from kivy_garden.xcamera import XCamera
 from kivy.lang import Builder
 from kivymd.app import MDApp as App
 from kivymd.uix.button import MDFlatButton as Button
-from utils import make_new_texture_frame
+from screens.utils import make_new_texture_frame
 from kivymd.uix.boxlayout import MDBoxLayout
 from kivymd.uix.card import MDCard, MDSeparator
 from kivymd.uix.label import MDLabel
