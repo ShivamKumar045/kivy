@@ -31,7 +31,7 @@ class CameraCV(XCamera):
         self.image_size = self._camera.texture.size
 
 
-class CamApp(MDScreen):
+class CamApp(App):
 
    
     def build(self):
@@ -54,7 +54,7 @@ class CamApp(MDScreen):
         self.camCV.image_bytes = False
 
         Clock.schedule_interval(self.update_texture, 1.0 / 60.0)
-        return layout
+        return self.screen
 
     def set_display_speed(self, instance):
         if self.display_speed == 2:
