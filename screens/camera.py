@@ -31,7 +31,7 @@ class CameraCV(XCamera):
         self.image_size = self._camera.texture.size
 
 
-class CamApp(App):
+class CamApp(MDScreen):
 
    
     def build(self):
