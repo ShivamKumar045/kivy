@@ -22,7 +22,7 @@ class MainApp(MDApp):
             size_hint=(None, None))
         self.save_img_button.bind(on_press=self.take_picture)
         layout.add_widget(self.save_img_button)
-        self.capture = cv2.VideoCapture(4)
+        self.capture = cv2.VideoCapture(0,cv2.CAP_ANDROID)
         Clock.schedule_interval(self.load_video, 1.0/30.0)
         return layout
 
